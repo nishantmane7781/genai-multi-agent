@@ -1,0 +1,13 @@
+langchain==0.2.14
+langchain-core==0.2.33
+langchain-chroma==0.1.4
+chromadb==0.4.24
+
+langchain-huggingface==0.0.3
+sentence-transformers==2.7.0
+
+flask==3.0.3
+python-dotenv==1.0.1
+pypdf==4.2.0
+pandas==2.2.2
+openpyxl==3.1.5

@@ -1,0 +1,5 @@
+
+LLM_MODEL = "phi3:mini"
+VECTOR_DB_DIR = "chroma_db"
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 50
