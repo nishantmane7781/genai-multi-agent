@@ -1,7 +1,7 @@
 
 # 🧠 Dynasore – Multi-Agent GenAI RAG System
 
-A production-ready **Multi-Agent Retrieval-Augmented Generation (RAG)** system built using **LangGraph, ChromaDB, and FastAPI**, designed to answer domain-specific queries through specialized agents while sharing a common LLM backbone.
+A **Multi-Agent Retrieval-Augmented Generation (RAG)** system built using **LangGraph, ChromaDB, and FastAPI**, designed to answer domain-specific queries through specialized agents while sharing a common LLM backbone.
 
 ---
 
