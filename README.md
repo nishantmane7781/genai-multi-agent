@@ -224,16 +224,6 @@ python -m src.api.app
 
 ---
 
-## 🚀 Roadmap
-
-- JWT-based authentication
-- Streaming responses
-- User-level memory
-- Cloud deployment (AWS / Azure)
-- React frontend
-
----
-
 ## 👨‍💻 Author
 
 **Nishant Mane**  
