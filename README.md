@@ -17,6 +17,13 @@ A production-ready **Multi-Agent Retrieval-Augmented Generation (RAG)** system b
 
 ---
 
+## 🏗️ Architecture Design (HLD & LLD)
+
+This project follows a **layered, modular, and scalable architecture** designed for real-world GenAI applications using **Multi-Agent RAG** principles.
+![HLD & LLD Architecture Diagram](sysdesign/hldlld.png)
+
+---
+
 ## ⚙️ Configuration
 
 ```python
