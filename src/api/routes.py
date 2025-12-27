@@ -15,16 +15,13 @@ def rag():
 
 @bp.route("/api/agents/query", methods=["POST"])
 def query_agent():
-    data = request.json
+    data = request.json or {}
     question = data.get("question")
-    agent = data.get("agent")
+    agent = data.get("agent") 
 
-    if not question or not agent:
-        return jsonify({"error": "question and agent are required"}), 400
+    if not question:
+        return jsonify({"error": "question is required"}), 400
 
     result = svc.query(question, agent)
 
-    return jsonify({
-        "agent": agent,
-        "answer": result
-    })
+    return jsonify(result)

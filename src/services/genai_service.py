@@ -2,6 +2,7 @@ from src.rag.dino_rag import DinoRAG
 from src.rag.marine_rag import MarineRAG
 from src.rag.earth_rag import EarthRAG
 from src.agents.domain_guard import is_question_in_domain
+from typing import Optional
 
 
 class GenAIService:
@@ -18,7 +19,13 @@ class GenAIService:
             cls._instance = cls()
         return cls._instance
 
-    def query(self, question: str, agent: str):
+    def query(self, question: str, agent: Optional[str] = None):
+        if not agent:
+            return {
+                "agent": "generic",
+                "response": self.earth_rag.run(question)
+            }
+
         agent = agent.lower()
 
         # ------------------------
