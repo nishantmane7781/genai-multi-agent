@@ -57,17 +57,32 @@ class BaseRAG:
             template="""
 You are a domain expert assistant.
 
-Use ONLY the given context to answer.
-If the answer is not present, say "Not found in documents".
+Use ONLY the given context to answer the question.
+If the answer is not present in the context, use "Not found in documents".
 
-Return output strictly in JSON format:
+You MUST return a valid JSON object that strictly follows this schema:
 {format_instructions}
+
+IMPORTANT RULES (DO NOT BREAK):
+- "summary" must be a single string
+- "key_points" must be an array of STRINGS only
+- "sources" must be an array of STRINGS only
+- Do NOT return objects inside arrays
+- Do NOT add title/description pairs
+- Do NOT add extra fields
+- Do NOT add explanations outside JSON
+
+If information is missing:
+- Use "Not found in documents" as string values
 
 Context:
 {context}
 
 Question:
 {question}
+
+Return ONLY valid JSON.
+
 """,
             input_variables=["context", "question"],
             partial_variables={
