@@ -6,6 +6,12 @@ from langchain.schema.runnable import RunnablePassthrough
 
 from src.vectorstore.chroma_store import ChromaVectorStore
 from src.prompts.response_schema import AgentResponse
+from src.config.settings import (
+    LLM_MODEL,
+    VECTOR_DB_DIR,
+    LLM_TEMPERATURE,
+    EMBEDDING_MODEL
+)
 
 
 class BaseRAG:
@@ -15,22 +21,22 @@ class BaseRAG:
         # LLM
         # --------------------
         self.llm = Ollama(
-            model="phi3:mini",
-            temperature=0
+            model=LLM_MODEL,
+            temperature=LLM_TEMPERATURE
         )
 
         # --------------------
         # Embeddings
         # --------------------
         self.embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
+            model_name=EMBEDDING_MODEL
         )
 
         # --------------------
         # Vector Store
         # --------------------
         self.vectorstore = ChromaVectorStore(
-            persist_dir="chroma_db",
+            persist_dir=VECTOR_DB_DIR,
             collection_name=collection_name,
             embeddings=self.embeddings
         )
