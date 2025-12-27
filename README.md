@@ -189,7 +189,7 @@ services:
   genai:
     build: .
     ports:
-      - "5000:5000"
+      - "8000:8000"
     volumes:
       - ./chroma_db:/app/chroma_db
     restart: always
