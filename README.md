@@ -72,7 +72,7 @@ python -m src.api.app
 Server will start at:
 
 ```
-http://localhost:5000
+http://localhost:8000
 ```
 
 ---
